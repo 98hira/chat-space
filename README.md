@@ -1,4 +1,64 @@
 # README
+---
+# DB設計
+
+## membersテーブル
+
+| Column | Type      | Options                        |
+| ------ | --------- | ------------------------------ |
+| user   | reference | null: false, foreign_key: true |
+| group  | reference | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :group
+- belongs_to :user
+
+
+
+## usersテーブル
+
+| Column   | Type   | Options     |
+| -------- | ------ | ----------- |
+| nickname | text   | null: false |
+| email    | string | null: false |
+| password | string | null: false |
+
+### Association
+
+- has_many :members
+- has_many :messages
+
+
+
+## groupsテーブル
+
+| Column    | Type | Options     |
+| --------- | ---- | ----------- |
+| GroupName | text | null: false |
+
+### Association
+
+- has_many :members
+- has_many :messages
+
+
+
+## messagesテーブル
+
+| Column | Type      | Options                        |
+| ------ | --------- | ------------------------------ |
+| body   | text      |                                |
+| image  | binary    |                                |
+| group  | reference | null: false, foreign_key: true |
+| user   | reference | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :group
+- belongs_to :user
+
+---
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
