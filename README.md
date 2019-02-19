@@ -35,7 +35,7 @@
 
 | Column    | Type | Options     |
 | --------- | ---- | ----------- |
-| GroupName | text | null: false |
+| name      | text | null: false |
 
 ### Association
 
@@ -49,7 +49,7 @@
 | Column | Type      | Options                        |
 | ------ | --------- | ------------------------------ |
 | body   | text      |                                |
-| image  | binary    |                                |
+| image  | text      |                                |
 | group  | reference | null: false, foreign_key: true |
 | user   | reference | null: false, foreign_key: true |
 
