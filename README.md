@@ -20,9 +20,12 @@
 
 | Column   | Type   | Options     |
 | -------- | ------ | ----------- |
-| nickname | text   | null: false |
+| nickname | string | null: false |
 | email    | string | null: false |
 | password | string | null: false |
+*devise
+
+
 
 ### Association
 
@@ -33,9 +36,9 @@
 
 ## groupsテーブル
 
-| Column    | Type | Options     |
-| --------- | ---- | ----------- |
-| name      | text | null: false |
+| Column    | Type   | Options     |
+| --------- | ------ | ----------- |
+| name      | string | null: false |
 
 ### Association
 
