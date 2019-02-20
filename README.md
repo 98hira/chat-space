@@ -2,12 +2,12 @@
 ---
 # DB設計
 
-## membersテーブル
+## group_userテーブル(中間テーブル)
 
 | Column | Type      | Options                        |
 | ------ | --------- | ------------------------------ |
-| user   | reference | null: false, foreign_key: true |
 | group  | reference | null: false, foreign_key: true |
+| user   | reference | null: false, foreign_key: true |
 
 ### Association
 
@@ -25,13 +25,11 @@
 | password | string | null: false |
 *devise
 
-
-
 ### Association
 
-- has_many :members
+- has_many :group_users
 - has_many :messages
-
+- has_many :groups, through: :group_users
 
 
 ## groupsテーブル
@@ -42,9 +40,9 @@
 
 ### Association
 
-- has_many :members
+- has_many :group_users
 - has_many :messages
-
+- has_many :users, through: :group_users
 
 
 ## messagesテーブル
