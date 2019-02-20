@@ -20,7 +20,7 @@
 
 | Column   | Type   | Options     |
 | -------- | ------ | ----------- |
-| nickname | string | null: false, uniqeu: true |
+| nickname | string | null: false, uniqeu: true, index: true, |
 | email    | string | null: false |
 | password | string | null: false |
 *devise
