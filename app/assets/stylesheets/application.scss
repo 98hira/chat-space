@@ -58,6 +58,42 @@
       grid-row: 3 / 4;
       grid-column: 1 / 2;
       padding: $main_psding;
+      padding-top: 20px;
+      padding-bottom: 20px;
+
+      .input-box {
+        float: left;
+        position: relative;
+        box-sizing: border-box;
+        width: calc(100% - 115px);
+        height: 50px;
+        .input-box__text {
+          box-sizing: border-box;
+          background-color: white;
+          height: 100%;
+          width: 100%;
+          padding-left: 10px;
+          padding-right: 40px;
+          border-width: 0;
+        }
+        .input-box__label {
+          position: absolute;
+          top: 17px;
+          right: 10px;
+          background-color: white;
+          border-width: 0;
+        }
+      }
+      .input-box__submit {
+        float: right;
+        background-color: #38AEF0;
+        height: 50px;
+        width: 100px;
+        border-width: 0;
+        margin-left: 15px;
+        color:white;
+        font-weight: bold;
+      }
     }
   }
 }
