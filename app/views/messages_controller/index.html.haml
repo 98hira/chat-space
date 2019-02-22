@@ -9,8 +9,3 @@
     %div{class: "main-header"}
     %div{class: "main-message"}
     %div{class: "main-form"}
-      = form_with(url: "/messages_controller", local: true) do |form|
-        %div{class: "input-box"}
-          = form.text_field :text, class:"input-box__text", placeholder: "type a message"
-          = form.label :"", class:"input-box__label fa fa-image fa-lg"
-        = form.submit value:"Send", class:"input-box__submit"
