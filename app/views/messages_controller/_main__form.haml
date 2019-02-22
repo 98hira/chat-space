@@ -1,2 +1,7 @@
 .main__form
-  main__form
+  = form_with(url: "/messages_controller", local: true) do |f|
+    = f.text_field :text, class:"main__form-text", placeholder: "type a message"
+    = f.label :image, class: 'main__form-image' do
+      = fa_icon 'picture-o', class: 'icon'
+      = f.file_field :image, class: 'hidden'
+    = f.submit 'Send', class: 'main__form-send'
