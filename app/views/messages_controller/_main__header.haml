@@ -1,2 +1,12 @@
 .main__header
-  main_header
+  .left-box
+    %h2{class:"left-box__group-name"}
+      ハゲの会
+    %ul{class:"left-box__menber-list"}
+      Menber:
+      %li{class:"left-box__menber-list__menber"}
+        ご来光
+      %li{class:"left-box__menber-list__menber"}
+        頭皮砂漠
+  .right-box
+    = link_to "Edit", "#", class:"right-box__button"
