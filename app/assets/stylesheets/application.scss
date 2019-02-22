@@ -11,27 +11,10 @@
   display: grid;
   grid-template-columns: 300px 1fr;
   grid-template-rows: 1fr;
-
   .side-bar {
     grid-row: 1 / 2;
     grid-column: 1 / 2;
-
-    //Internal grid layout settings
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 100px 1fr;
-    .side-header {
-      background-color: #253141;
-      grid-row: 1 / 2;
-      grid-column: 1 / 2;
-      padding: $side_padding;
-    }
-    .side-groups {
-      background-color: #2F3E51;
-      grid-row: 2 / 4;
-      grid-column: 1 / 2;
-      padding: $side_padding;
-    }
+    @import "modules/side-bar"
   }
   .main {
     grid-row: 1 / 2;
@@ -41,19 +24,19 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 100px 1fr 90px;
-    .main-header {
+    &__header {
       background-color: #EEE;
       grid-row: 1 / 2;
       grid-column: 1 / 2;
       padding: $main_psding;
     }
-    .main-message {
+    &__message {
       background-color: #FAFAFA;
       grid-row: 2 / 3;
       grid-column: 1 / 2;
       padding: $main_psding;
     }
-    .main-form {
+    &__form {
       background-color: #DDD;
       grid-row: 3 / 4;
       grid-column: 1 / 2;
