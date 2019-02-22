@@ -29,19 +29,19 @@
       background-color: #EEE;
       grid-row: 1 / 2;
       grid-column: 1 / 2;
-      padding: $main_pding;
+      padding: $main_padding;
     }
     &__message {
       background-color: #FAFAFA;
       grid-row: 2 / 3;
       grid-column: 1 / 2;
-      padding: $main_pding;
+      padding: $main_padding;
     }
     &__form {
       background-color: #DDD;
       grid-row: 3 / 4;
       grid-column: 1 / 2;
-      padding: $main_pding;
+      padding: $main_padding;
       padding-top: 20px;
 
       &-text {
