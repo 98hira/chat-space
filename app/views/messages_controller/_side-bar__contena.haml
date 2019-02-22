@@ -1,6 +1,13 @@
 .side-bar__contena
   .header
-    %h3.header__name
-      "= current_user.name"
+    %p{class:"header__user-name"}
+      頭皮砂漠
+    %ul{class:"header__menu-list"}
+      %li{class:"header__menu-list__edit"}
+        = link_to "#" do
+          = fa_icon 'edit', class: 'icon'
+      %li{class:"header__menu-list__conf"}
+        = link_to "#" do
+          = fa_icon 'cog', class: 'icon'
   .groups
     "= current_user.name"

@@ -10,6 +10,22 @@
     grid-row: 1 / 2;
     grid-column: 1 / 2;
     padding: $side_padding;
+    padding-top: 38px;
+    &__user-name {
+      color: #FFF;
+      float: left;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    &__menu-list {
+      float: right;
+      li {
+        display: inline;
+        .icon {
+          color: #FFF;
+        }
+      }
+    }
   }
   .groups {
     background-color: #2F3E51;
