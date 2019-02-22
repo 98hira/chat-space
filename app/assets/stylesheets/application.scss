@@ -42,6 +42,25 @@
       grid-row: 3 / 4;
       grid-column: 1 / 2;
       padding: $main_psding;
+      padding-top: 20px;
+
+      &-text {
+        padding: 0 10px;
+        box-sizing: border-box;
+        height: 50px;
+      }
+      &-image {
+        right: 10;
+        .hidden {
+          display: none;
+        }
+      }
+      &-send {
+        background-color: #38AEF0;
+        height: 50px;
+        width: 100px;
+        margin-left: 40px;
+      }
     }
   }
 }
