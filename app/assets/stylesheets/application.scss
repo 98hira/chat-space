@@ -67,13 +67,13 @@
         }
       }
     }
-    &__message {
+    &-messages {
       background-color: #FAFAFA;
       grid-row: 2 / 3;
       grid-column: 1 / 2;
       padding: $main_padding;
       padding-top: 46px;
-      .message {
+      &__message {
         padding-bottom: 40px;
         &__user-info {
           &__talker {
