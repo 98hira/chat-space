@@ -72,6 +72,28 @@
       grid-row: 2 / 3;
       grid-column: 1 / 2;
       padding: $main_padding;
+      padding-top: 46px;
+      .message {
+        padding-bottom: 40px;
+        &__user-info {
+          &__talker {
+            display: inline;
+            font-size: 16px;
+            color: #434A54;
+            font-weight: bold;
+          }
+          &__date {
+            display: inline;
+            font-size: 12px;
+            color: #999;
+          }
+        }
+        &__text {
+
+          font-size: 14px;
+          color: #434A54;
+        }
+      }
     }
     &__form {
       background-color: #DDD;
