@@ -12,7 +12,7 @@
   display: grid;
   grid-template-columns: 300px 1fr;
   grid-template-rows: 1fr;
-  .side-bar {
+  .side {
     grid-row: 1 / 2;
     grid-column: 1 / 2;
     @import "modules/side-bar"

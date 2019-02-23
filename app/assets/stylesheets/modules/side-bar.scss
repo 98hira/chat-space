@@ -1,11 +1,11 @@
-&__contena {
+&-bar {
   height: 100%;
   width: 100%;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 100px 1fr;
 
-  &-header {
+  &__header {
     background-color: #253141;
     grid-row: 1 / 2;
     grid-column: 1 / 2;
@@ -27,7 +27,7 @@
       }
     }
   }
-  &-groups {
+  &__groups {
     background-color: #2F3E51;
     grid-row: 2 / 4;
     grid-column: 1 / 2;
