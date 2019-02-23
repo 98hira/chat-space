@@ -94,13 +94,13 @@
         }
       }
     }
-    &__form {
+    &-form {
       background-color: #DDD;
       grid-row: 3 / 4;
       grid-column: 1 / 2;
       padding: $main_padding;
       padding-top: 20px;
-      &-input-box {
+      &__input-box {
         float:left;
         position: relative;
         box-sizing: border-box;
@@ -116,12 +116,12 @@
           position: absolute;
           top: 15px;
           right: 10px;
-          .hidden {
+          &--hidden {
             display: none;
           }
         }
       }
-      &-send {
+      &__send {
         float:right;
         background-color: $light-blue;
         border-width: 0px;
