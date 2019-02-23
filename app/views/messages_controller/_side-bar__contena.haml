@@ -1,24 +1,24 @@
 .side-bar__contena
-  .header
-    %p{class:"header__user-name"}
+  .side-bar__contena-header
+    %p{class:"side-bar__contena-header__user-name"}
       頭皮砂漠
-    %ul{class:"header__menu-list"}
-      %li{class:"header__menu-list__edit"}
+    %ul{class:"side-bar__contena-header__menu-list"}
+      %li{class:"side-bar__contena-header__menu-list__edit"}
         = link_to "#" do
           = fa_icon 'edit', class: 'icon'
-      %li{class:"header__menu-list__conf"}
+      %li{class:"side-bar__contena-header__menu-list__conf"}
         = link_to "#" do
           = fa_icon 'cog', class: 'icon'
-  .groups
+  .side-bar__contena-groups
     = link_to "#" do
-      .group
-        %p.group__grou-name
+      .side-bar__contena-groups__group
+        %p.side-bar__contena-groups__group-name
           ハゲの会
-        %p.group__latest-message
+        %p.side-bar__contena-groups__group-latest-message
           暗いハゲより明るいハゲ。
     = link_to "#" do
-      .group
-        %p.group__grou-name
+      .side-bar__contena-groups__group
+        %p.side-bar__contena-groups__group-name
           おしゃれなハゲ方を考える会
-        %p.group__latest-message
+        %p.side-bar__contena-groups__group-latest-message
           ハゲてきたら自ら剃る。

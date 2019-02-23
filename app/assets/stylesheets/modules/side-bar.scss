@@ -5,7 +5,7 @@
   grid-template-columns: 1fr;
   grid-template-rows: 100px 1fr;
 
-  .header {
+  &-header {
     background-color: #253141;
     grid-row: 1 / 2;
     grid-column: 1 / 2;
@@ -27,27 +27,26 @@
       }
     }
   }
-  .groups {
+  &-groups {
     background-color: #2F3E51;
     grid-row: 2 / 4;
     grid-column: 1 / 2;
     padding: $side_padding;
     padding-top: 20px;
     a {text-decoration: none;}
-    .group {
+    &__group {
       padding-bottom: 40px;
-      &__grou-name {
+      &-name {
         font-size: 15px;
         font-weight: bold;
         color: $white;
         padding-bottom: 5px;
       }
-      &__latest-message {
+      &-latest-message {
         font-size: 11px;
         font-weight: bold;
         color: $white;
       }
     }
-
   }
 }
