@@ -25,7 +25,7 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 100px 1fr 90px;
-    &__header {
+    &-header {
       background-color: #EEE;
       grid-row: 1 / 2;
       grid-column: 1 / 2;
@@ -35,7 +35,7 @@
       width: calc(100% - 300px);
       height: 100px;
       position: absolute;
-      .left-box {
+      &__left-box {
         float: left;
         &__group-name {
           font-size: 20px;
@@ -45,12 +45,12 @@
         &__menber-list {
           font-size: 12px;
           color: #999;
-          &__menber {
+          &-name {
             display: inline;
           }
         }
       }
-      .right-box {
+      &__right-box {
         position: relative;
         top: 28px;
         height: 100%;
@@ -89,7 +89,6 @@
           }
         }
         &__text {
-
           font-size: 14px;
           color: #434A54;
         }
@@ -101,7 +100,7 @@
       grid-column: 1 / 2;
       padding: $main_padding;
       padding-top: 20px;
-      .input-box {
+      &-input-box {
         float:left;
         position: relative;
         box-sizing: border-box;
