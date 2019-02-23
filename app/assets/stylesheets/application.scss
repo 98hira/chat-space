@@ -1,0 +1,134 @@
+@import "./reset";
+@import "./variable";
+@import "font-awesome";
+
+
+.flash-box {
+  background-color: #38AEF0;
+}
+.container {
+  height: 100vh;
+  width:100vw;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: 1fr;
+  .side {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    @import "modules/side-bar"
+  }
+  .main {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+
+    //Internal grid layout settings
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 1fr 90px;
+    &-header {
+      background-color: #EEE;
+      grid-row: 1 / 2;
+      grid-column: 1 / 2;
+      padding: $main_padding;
+
+      box-sizing: border-box;
+      width: calc(100% - 300px);
+      height: 100px;
+      position: absolute;
+      &__left-box {
+        float: left;
+        &__group-name {
+          font-size: 20px;
+          color: #333;
+          margin: 35px 0 15px;
+        }
+        &__menber-list {
+          font-size: 12px;
+          color: #999;
+          &-name {
+            display: inline;
+          }
+        }
+      }
+      &__right-box {
+        position: relative;
+        top: 28px;
+        height: 100%;
+        float: right;
+        &__button {
+          display: block;
+          height: 40px;
+          width: 72px;
+          text-align: center;
+          line-height: 40px;
+          text-decoration: none;
+          color: $light-blue;
+          border: solid 1px $light-blue;
+        }
+      }
+    }
+    &-messages {
+      background-color: #FAFAFA;
+      grid-row: 2 / 3;
+      grid-column: 1 / 2;
+      padding: $main_padding;
+      padding-top: 46px;
+      &__message {
+        padding-bottom: 40px;
+        &__user-info {
+          &__talker {
+            display: inline;
+            font-size: 16px;
+            color: #434A54;
+            font-weight: bold;
+          }
+          &__date {
+            display: inline;
+            font-size: 12px;
+            color: #999;
+          }
+        }
+        &__text {
+          font-size: 14px;
+          color: #434A54;
+        }
+      }
+    }
+    &-form {
+      background-color: #DDD;
+      grid-row: 3 / 4;
+      grid-column: 1 / 2;
+      padding: $main_padding;
+      padding-top: 20px;
+      &__input-box {
+        float:left;
+        position: relative;
+        box-sizing: border-box;
+        width: calc(100% - 115px);
+        &__text {
+          padding: 0 10px;
+          border-width: 0px;
+          box-sizing: border-box;
+          height: 50px;
+          width: 100%;
+        }
+        &__image {
+          position: absolute;
+          top: 15px;
+          right: 10px;
+          &--hidden {
+            display: none;
+          }
+        }
+      }
+      &__send {
+        float:right;
+        background-color: $light-blue;
+        border-width: 0px;
+        height: 50px;
+        width: 100px;
+        margin-left: 15px;
+      }
+    }
+  }
+}
