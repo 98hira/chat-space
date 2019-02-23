@@ -101,23 +101,34 @@
       grid-column: 1 / 2;
       padding: $main_padding;
       padding-top: 20px;
-
-      &-text {
-        padding: 0 10px;
+      .input-box {
+        float:left;
+        position: relative;
         box-sizing: border-box;
-        height: 50px;
-      }
-      &-image {
-        right: 10;
-        .hidden {
-          display: none;
+        width: calc(100% - 115px);
+        &__text {
+          padding: 0 10px;
+          border-width: 0px;
+          box-sizing: border-box;
+          height: 50px;
+          width: 100%;
+        }
+        &__image {
+          position: absolute;
+          top: 15px;
+          right: 10px;
+          .hidden {
+            display: none;
+          }
         }
       }
       &-send {
+        float:right;
         background-color: $light-blue;
+        border-width: 0px;
         height: 50px;
         width: 100px;
-        margin-left: 40px;
+        margin-left: 15px;
       }
     }
   }
