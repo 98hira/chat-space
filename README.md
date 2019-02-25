@@ -34,9 +34,9 @@
 
 ## groupsテーブル
 
-| Column    | Type   | Options     |
-| --------- | ------ | ----------- |
-| name      | string | null: false |
+| Column    | Type   | Options                                |
+| --------- | ------ | -------------------------------------- |
+| name      | string | null: false, unique: true, index: true |
 
 ### Association
 
