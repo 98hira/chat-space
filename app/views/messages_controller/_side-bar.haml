@@ -4,7 +4,7 @@
       = current_user.nickname
     %ul{class:"side-bar__header__menu-list"}
       %li{class:"side-bar__header__menu-list__edit"}
-        = link_to "#" do
+        = link_to new_group_path do
           = fa_icon 'edit', class: 'icon'
       %li{class:"side-bar__header__menu-list__conf"}
         = link_to edit_user_path(current_user) do
