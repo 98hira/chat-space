@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   root 'groups#index'
   get 'messages_controller' => 'messages_controller#index'
   resources :users, only: [:edit, :update]
-  resources :groups, only: [:new, :create, :edit, :update]
+  resources :groups, only: [:new, :create, :edit, :update] do
+    resources :messages, only: [:index, :create]
+  end
 end
