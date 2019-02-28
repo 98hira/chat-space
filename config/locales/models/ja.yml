@@ -1,0 +1,10 @@
+ja:
+  activerecord:
+    models:
+      group: グループ
+    attributes:
+      group:
+        id: ID
+        created_at: 登録日時
+        updated_at: 更新日時
+        name: グループ名
