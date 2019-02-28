@@ -4,10 +4,10 @@
 
 ## group_userテーブル(中間テーブル)
 
-| Column | Type      | Options                        |
-| ------ | --------- | ------------------------------ |
-| group  | reference | null: false, foreign_key: true |
-| user   | reference | null: false, foreign_key: true |
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| group  | references | null: false, foreign_key: true |
+| user   | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -23,6 +23,7 @@
 | nickname | string | null: false, uniqeu: true, index: true, |
 | email    | string | null: false |
 | password | string | null: false |
+
 *devise
 
 ### Association
@@ -47,12 +48,12 @@
 
 ## messagesテーブル
 
-| Column | Type      | Options                        |
-| ------ | --------- | ------------------------------ |
-| body   | text      |                                |
-| image  | text      |                                |
-| group  | reference | null: false, foreign_key: true |
-| user   | reference | null: false, foreign_key: true |
+| Column    | Type       | Options                        |
+| --------- | ---------- | ------------------------------ |
+| content   | text       |                                |
+| image     | text       |                                |
+| group     | references | null: false, foreign_key: true |
+| user      | references | null: false, foreign_key: true |
 
 ### Association
 
