@@ -20,6 +20,7 @@
     @import "modules/side-bar"
   }
   .main {
+    overflow: scroll;
     grid-row: 1 / 2;
     grid-column: 2 / 3;
 
@@ -70,6 +71,7 @@
       }
     }
     &-messages {
+      overflow: scroll;
       background-color: #FAFAFA;
       grid-row: 2 / 3;
       grid-column: 1 / 2;
