@@ -1,8 +1,9 @@
 .main-form
-  = form_with(url: "/messages", local: true) do |f|
+  = form_for [@group, @message] do |f|
     .main-form__input-box
-      = f.text_field :text, class:"main-form__input-box__text", placeholder: "type a message"
+      = f.text_field :content, class:"main-form__input-box__text", placeholder: "type a message"
       = f.label :image, class: 'main-form__input-box__image' do
+
         = fa_icon 'picture-o', class: 'icon'
         = f.file_field :image, class: 'main-form__input-box__image--hidden'
     = f.submit 'Send', class: 'main-form__send'
