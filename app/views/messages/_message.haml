@@ -5,7 +5,7 @@
         %p.main-messages__message__user-info__talker
           = message.user.nickname
         %p.main-messages__message__user-info__date
-          = message.created_at.strftime("%Y/%m/%d %H:%M")
+          = time_stamp_format(message.created_at)
         -# - if message.content.present?
         %p.main-messages__message__text
           = message.content

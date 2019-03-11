@@ -1,11 +1,11 @@
 .main-header
   .main-header__left-box
-    %h2{class:"main-header__left-box__group-name"}
+    %h2.main-header__left-box__group-name
       =@group.name
-    %ul{class:"main-header__lleft-box__menber-list"}
+    %ul.main-header__lleft-box__menber-list
       Menber:
       - @group.users.each do |user|
-        %li{class:"main-header__left-box__menber-list-name"}
+        %li.main-header__left-box__menber-list-name
           =user.nickname
   .main-header__right-box
     = link_to "Edit", edit_group_path(@group), class:"main-header__right-box__button"
