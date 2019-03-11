@@ -8,7 +8,7 @@ $(function() {
     <div class='main-messages__message'>
       <div class='main-messages__message__user-info'>
         <p class='main-messages__message__user-info__talker'>
-         ${message.user_name}
+         ${message.nickname}
         </p>
         <p class='main-messages__message__user-info__date'>
          ${message.created_at}
