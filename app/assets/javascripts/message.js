@@ -1,6 +1,6 @@
 $(function() {
   function buildMessageHTML(message) {
-    var add_image = "";
+    let add_image = "";
     if (message.image) {
       add_image = `<p class="main-messages__message____image"><img src="${message.image}"></p>`;
     }
@@ -24,8 +24,8 @@ $(function() {
 
   $('.new_message').on('submit', function(e) {
     e.preventDefault();
-    var formData = new FormData(this);
-    var url = $(this).attr('action');
+    let formData = new FormData(this);
+    let url = $(this).attr('action');
     $.ajax({
       type: 'POST',
       url: url,
@@ -35,7 +35,7 @@ $(function() {
       contentType: false
     })
     .done(function(data) {
-      var html = buildMessageHTML(data);
+      let html = buildMessageHTML(data);
       $('.main-messages').append(html);
       $('.new_message')[0].reset();
       $(".main-form__send").prop("disabled", false);
