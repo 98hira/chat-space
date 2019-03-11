@@ -2,20 +2,22 @@ $(function() {
   function buildMessageHTML(message) {
     let add_image = "";
     if (message.image) {
-      add_image = `<p class="main-messages__message____image"><img src="${message.image}"></p>`;
+      add_image = `<p class="main-messages__message__image"><img src="${message.image}"></p>`;
     }
     html = `
-    <div class='main-messages__message'>
-      <div class='main-messages__message__user-info'>
-        <p class='main-messages__message__user-info__talker'>
-         ${message.nickname}
-        </p>
-        <p class='main-messages__message__user-info__date'>
-         ${message.created_at}
-        </p>
-        <p class='main-messages__message__text'>
-          ${message.content}
-        </p>
+    <div class="main-messages">
+      <div class='main-messages__message'>
+        <div class='main-messages__message__user-info'>
+          <p class='main-messages__message__user-info__talker'>
+           ${message.nickname}
+          </p>
+          <p class='main-messages__message__user-info__date'>
+           ${message.created_at}
+          </p>
+          <p class='main-messages__message__text'>
+            ${message.content}
+          </p>
+        </div>
       </div>
       ${add_image}
     </div>`;
