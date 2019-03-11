@@ -5,7 +5,7 @@ $(function() {
       add_image = `<p class="main-messages__message__image"><img src="${message.image}"></p>`;
     }
     html = `
-    <div class="main-messages">
+    <div class="main-messages" data-id="${message.id}" >
       <div class='main-messages__message'>
         <div class='main-messages__message__user-info'>
           <p class='main-messages__message__user-info__talker'>
@@ -54,5 +54,7 @@ $(function() {
 
   function update() {
     console.log("hoge");
+    let lastMessageId = $('.main-messages').last().data('id');
+    console.log(lastMessageId);
   }
 });
