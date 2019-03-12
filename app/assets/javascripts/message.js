@@ -47,15 +47,22 @@ $(function() {
   });
 
 
-  // $(function() {
-  //   setInterval(update, 5000);
-  // )};
-  $("body").click(function(){
-    update();
+  $(function() {
+    if (window.location.href.match(/\/groups\/\d+\/messages/)) {
+      setInterval(update, 1000);
+    }
   });
+  // $("body").click(function(){
+  //   //
+  //     update();
+  //   // }
+  //});
 
   function update() {
+    console.log(Date());
     let lastMessageId = $('.main-messages__message').last().data('id');
+    console.log(lastMessageId);
+    console.log("------");
     $.ajax({
       type: "GET",
       url: location.href,
@@ -70,7 +77,7 @@ $(function() {
       });
     })
     .fail(function(){
-      alert("自動メッセージ取得に失敗しました")
+      // alert("自動メッセージ取得に失敗しました")
     });
   }
 });
