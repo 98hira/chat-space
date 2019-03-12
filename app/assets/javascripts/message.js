@@ -5,7 +5,7 @@ $(function() {
       add_image = `<p class='main-messages__message__image'><img src="${message.image}"></p>`;
     }
     html = `
-    <div class='main-messages__message' data-id="${message.id}" >>
+    <div class='main-messages__message' data-id="${message.id}" >
       <div class='main-messages__message__user-info'>
         <p class='main-messages__message__user-info__talker'>
          ${message.nickname}
@@ -46,13 +46,31 @@ $(function() {
     });
   });
 
-  $(function() {
-    setInterval(update, 5000);
+
+  // $(function() {
+  //   setInterval(update, 5000);
+  // )};
+  $("body").click(function(){
+    update();
   });
 
   function update() {
-    console.log("hoge");
-    let lastMessageId = $('.main-messages').last().data('id');
-    console.log(lastMessageId);
+    let lastMessageId = $('.main-messages__message').last().data('id');
+    $.ajax({
+      type: "GET",
+      url: location.href,
+      dataType: 'json',
+      data: {message_id: lastMessageId},
+    })
+    .done(function(new_messages){
+      let insertHTML = ''
+      new_messages.forEach(function(message){
+        insertHTML += buildMessageHTML(message);
+        $('.main-messages').append(insertHTML);
+      });
+    })
+    .fail(function(){
+      alert("自動メッセージ取得に失敗しました")
+    });
   }
 });
