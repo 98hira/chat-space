@@ -46,12 +46,8 @@ $(function() {
     });
   });
 
-
-  // $(function() {
-  //   setInterval(update, 5000);
-  // )};
-  $("body").click(function(){
-    update();
+  $(function() {
+    setInterval(update, 5000);
   });
 
   function update() {
