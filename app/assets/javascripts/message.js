@@ -32,8 +32,8 @@ $(function() {
       processData: false,
       contentType: false
     })
-    .done(function(data) {
-      let html = buildMessageHTML(data);
+    .done(function(send_message) {
+      let html = buildMessageHTML(send_message);
       $('.main-messages').append(html);
       $('.new_message')[0].reset();
       $(".main-form__send").prop("disabled", false);
