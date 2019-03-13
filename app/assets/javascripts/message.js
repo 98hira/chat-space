@@ -45,10 +45,10 @@ $(function() {
   });
 
   $(function() {
-    setInterval(update, 5000);
+    setInterval(message_update, 5000);
   });
 
-  function update() {
+  function message_update() {
     let lastMessageId = $('.main-messages__message').last().data('id');
     $.ajax({
       type: "GET",
