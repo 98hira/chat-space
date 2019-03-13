@@ -4,7 +4,6 @@
       = message.user.nickname
     %p.main-messages__message__user-info__date
       = time_stamp_format(message.created_at)
-    -# - if message.content.present?
     %p.main-messages__message__text
       = message.content
   = image_tag message.image.url, class: 'main-messages__message__image' if message.image.present?
