@@ -46,7 +46,6 @@ $(function() {
     });
   });
 
-
   $(function() {
     if (window.location.href.match(/\/groups\/\d+\/messages/)) {
       console.log("setInterval call");
@@ -56,17 +55,18 @@ $(function() {
       clearInterval();
     }
   });
-  // $("body").click(function(){
-  //   //
+
+  //自動更新されない
+  // if (window.location.href.match(/\/groups\/\d+\/messages/)) {
+  //   var countup = function(){
   //     update();
-  //   // }
-  //});
+  //   }
+  //   setInterval(countup, 5000);
+  // }
 
   function update() {
-    console.log(Date());
     let lastMessageId = $('.main-messages__message').last().data('id');
     console.log(lastMessageId);
-    console.log("------");
     $.ajax({
       type: "GET",
       url: location.href,
