@@ -1,12 +1,9 @@
-.main-messages
-  - @messages.each do |message|
-    .main-messages__message
-      .main-messages__message__user-info
-        %p.main-messages__message__user-info__talker
-          = message.user.nickname
-        %p.main-messages__message__user-info__date
-          = time_stamp_format(message.created_at)
-        -# - if message.content.present?
-        %p.main-messages__message__text
-          = message.content
-      = image_tag message.image.url, class: 'main-messages__message____image' if message.image.present?
+.main-messages__message{'data-id': message.id}
+  .main-messages__message__user-info
+    %p.main-messages__message__user-info__talker
+      = message.user.nickname
+    %p.main-messages__message__user-info__date
+      = time_stamp_format(message.created_at)
+    %p.main-messages__message__text
+      = message.content
+  = image_tag message.image.url, class: 'main-messages__message__image' if message.image.present?

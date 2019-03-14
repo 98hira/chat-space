@@ -1,11 +1,9 @@
 $(function() {
   function buildMessageHTML(message) {
-    var add_image = "";
-    if (message.image) {
-      add_image = `<p class="main-messages__message____image"><img src="${message.image}"></p>`;
-    }
+    add_image = (message.image) ? `<p class='main-messages__message__image'><img src="${message.image}"></p>` : '';
+
     html = `
-    <div class='main-messages__message'>
+    <div class='main-messages__message' data-id="${message.id}" >
       <div class='main-messages__message__user-info'>
         <p class='main-messages__message__user-info__talker'>
          ${message.nickname}
@@ -24,8 +22,8 @@ $(function() {
 
   $('.new_message').on('submit', function(e) {
     e.preventDefault();
-    var formData = new FormData(this);
-    var url = $(this).attr('action');
+    let formData = new FormData(this);
+    let url = $(this).attr('action');
     $.ajax({
       type: 'POST',
       url: url,
@@ -34,8 +32,8 @@ $(function() {
       processData: false,
       contentType: false
     })
-    .done(function(data) {
-      var html = buildMessageHTML(data);
+    .done(function(send_message) {
+      let html = buildMessageHTML(send_message);
       $('.main-messages').append(html);
       $('.new_message')[0].reset();
       $(".main-form__send").prop("disabled", false);
@@ -45,4 +43,28 @@ $(function() {
       alert('メッセージ送信に失敗しました');
     });
   });
+
+  $(function() {
+    setInterval(message_update, 5000);
+  });
+
+  function message_update() {
+    let lastMessageId = $('.main-messages__message').last().data('id');
+    $.ajax({
+      type: "GET",
+      url: location.href,
+      dataType: 'json',
+      data: {message_id: lastMessageId},
+    })
+    .done(function(new_messages){
+      let insertHTML = ''
+      new_messages.forEach(function(message){
+        insertHTML += buildMessageHTML(message);
+        $('.main-messages').append(insertHTML);
+      });
+    })
+    .fail(function(){
+      alert("自動メッセージ取得に失敗しました")
+    });
+  }
 });
