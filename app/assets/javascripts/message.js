@@ -49,7 +49,11 @@ $(function() {
 
   $(function() {
     if (window.location.href.match(/\/groups\/\d+\/messages/)) {
+      console.log("setInterval call");
       setInterval(update, 1000);
+    } else {
+      console.log("clearInterval call");
+      clearInterval();
     }
   });
   // $("body").click(function(){
