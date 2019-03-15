@@ -50,6 +50,10 @@ $(function() {
 
   function message_update() {
     let lastMessageId = $('.main-messages__message').last().data('id');
+
+    //lastMessageIDが取得できない場合は何もしない。
+    if (typeof lastMessageId === "undefined") {return;}
+
     $.ajax({
       type: "GET",
       url: location.href,
