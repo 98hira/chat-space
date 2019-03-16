@@ -10,6 +10,11 @@ $(function() {
     $('.user-search-result').append(html);
   }
 
+  //検索結果のリセット
+  function resetSearchUserResult() {
+    $('.user-search-result').empty();
+  }
+
   //userを検索結果として表示するかを判定する
   function judgeSearchUserResult(users) {
     //チャットメンバーに追加された名前一覧取得する
@@ -36,7 +41,7 @@ $(function() {
           data: {keyword: input},
         })
         .done(function(users) {
-          $('.user-search-result').empty();
+          resetSearchUserResult();
           if (users.length > 0) {
             judgeSearchUserResult(users);
           } else {
@@ -48,6 +53,8 @@ $(function() {
         })
         .always(function() {
         });
+      } else if(input.length <= 0) {
+        resetSearchUserResult();
       }
     });
   });
