@@ -15,8 +15,17 @@ $(function() {
     $('.user-search-result').empty();
   }
 
+  //検索結果がない場合
+  function noneSearchUserResult(user) {
+    let html = `<div class="chat-group-user clearfix">
+                  該当ユーザーなし
+                </div>`;
+    $('.user-search-result').append(html);
+  }
+
   //userを検索結果として表示するかを判定する
   function judgeSearchUserResult(users) {
+    let user_apended_flag = false;
     //チャットメンバーに追加された名前一覧取得する
     let menber_names = $('.chat-group-user__name').map(function(index, elem){return $(elem).text();}).get();
 
@@ -24,8 +33,10 @@ $(function() {
       // チャットメンバーに追加されていないユーザーだけを検索結果に加える
       if ($.inArray(user.nickname, menber_names) < 0) {
         appendSearchUserResult(user);
+        user_apended_flag = true;
       }
     });
+    return user_apended_flag;
   }
 
   //チャットメンバーに加える
@@ -46,6 +57,7 @@ $(function() {
     $(this).parent().remove();
   });
 
+  //ユーザー検索処理
   $(document).on('turbolinks:load', function(){
     $('#user-search-field').on('keyup', function(event) {
       event.preventDefault();
@@ -60,16 +72,13 @@ $(function() {
         })
         .done(function(users) {
           resetSearchUserResult();
-          if (users.length > 0) {
-            judgeSearchUserResult(users);
-          } else {
-            console.log("該当ユーザーなし");
+          //検索結果に表示するユーザデータがないかを判定
+          if (!((users.length > 0) ? judgeSearchUserResult(users) : false)) {
+            noneSearchUserResult();
           }
         })
         .fail(function() {
-          console.log("ユーザ検索に失敗しました");
-        })
-        .always(function() {
+          alert('ユーザ検索に失敗しました');
         });
       } else if(input.length <= 0) {
         resetSearchUserResult();
