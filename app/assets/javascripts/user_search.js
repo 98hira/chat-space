@@ -5,7 +5,7 @@ $(function() {
   function appendSearchUserResult(user) {
     let html = `<div class="chat-group-user clearfix">
                   <p class="chat-group-user__name">${user.nickname}</p>
-                  <a class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${user.id}" data-user-name="${user.name}">追加</a>
+                  <a class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${user.id}" data-user-nickname="${user.nickname}">追加</a>
                 </div>`;
     $('.user-search-result').append(html);
   }
