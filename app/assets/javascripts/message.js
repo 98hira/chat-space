@@ -1,4 +1,6 @@
 $(function() {
+  let message_update_time = -1;
+
   function buildMessageHTML(message) {
     add_image = (message.image) ? `<p class='main-messages__message__image'><img src="${message.image}"></p>` : '';
     html = `
@@ -43,15 +45,13 @@ $(function() {
     });
   });
 
-  $(function() {
-    setInterval(message_update, 5000);
+  $(document).on('turbolinks:load', function() {
+    if (message_update_time > 0) {clearInterval(message_update_time);}
+    message_update_time = (location.href.match(/\/groups\/\d+\/messages/)) ? setInterval(message_update, 5000) : -1;
   });
 
   function message_update() {
     let lastMessageId = $('.main-messages__message').last().data('id');
-
-    //lastMessageIDが取得できない場合は何もしない。
-    if (typeof lastMessageId === "undefined") {return;}
 
     $.ajax({
       type: "GET",
